@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3rd party
     "ckeditor",
     "ckeditor_uploader",
+    "taggit",
     # local apps
     "blog.apps.BlogConfig",
     "resume.apps.ResumeConfig",
@@ -135,6 +136,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media/"
+
+TAGGIT_CASE_INSENSITIVE = True
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 

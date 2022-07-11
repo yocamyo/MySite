@@ -1,10 +1,13 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.core.paginator import Paginator, PageNotAnInteger
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from taggit.models import Tag
+
+
+from .models import Post, Comment
 from .forms import CommentForm
-from .models import Post
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
     posts = Post.published.all()
 
     paginator = Paginator(posts, 10)  # 10 posts in each page
@@ -18,7 +21,14 @@ def post_list(request):
         # If page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, "post_list.html", {"posts": posts, page: "pages"})
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        posts = posts.filter(tags__in=[tag])
+
+    return render(
+        request, "post_list.html", {"posts": posts, page: "pages", "tag": tag}
+    )
 
 
 def post_detail(request, post):
@@ -38,10 +48,9 @@ def post_detail(request, post):
             new_comment.post = post
             # Save the comment to the database
             new_comment.save()
-            # redirect to same page and focus on that comment
             return redirect(post.get_absolute_url() + "#" + str(new_comment.id))
-        else:
-            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
 
     return render(
         request,
