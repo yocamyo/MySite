@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
 from taggit.models import Tag
 
 
@@ -25,6 +26,12 @@ def post_list(request, tag_slug=None):
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
         posts = posts.filter(tags__in=[tag])
+
+    query = request.GET.get("q")
+    if query:
+        posts = Post.published.filter(
+            Q(title__icontains=query) | Q(tags__name__icontains=query)
+        ).distinct()
 
     return render(
         request, "post_list.html", {"posts": posts, page: "pages", "tag": tag}

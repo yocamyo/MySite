@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # local apps
     "blog.apps.BlogConfig",
     "resume.apps.ResumeConfig",
+    "contact.apps.ContactConfig",
 ]
 
 MIDDLEWARE = [
@@ -289,3 +290,7 @@ CKEDITOR_CONFIGS = {
         ),
     }
 }
+
+
+DEFAULT_FROM_EMAIL = "naviscam@gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

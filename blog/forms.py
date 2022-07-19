@@ -15,7 +15,7 @@ class CommentForm(forms.ModelForm):
             "class": "form-control",
         }
         self.fields["email"].widget.attrs = {
-            "placeholder": "Enter email",
+            "placeholder": "Enter email (optional)",
             "class": "form-control",
         }
         self.fields["body"].widget.attrs = {
