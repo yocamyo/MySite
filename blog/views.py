@@ -11,7 +11,7 @@ from .forms import CommentForm
 def post_list(request, tag_slug=None):
     posts = Post.published.all()
 
-    paginator = Paginator(posts, 10)  # 10 posts in each page
+    paginator = Paginator(posts, 5)  # 10 posts in each page
     page = request.GET.get("page")
     try:
         posts = paginator.page(page)

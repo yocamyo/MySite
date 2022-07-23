@@ -23,9 +23,9 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="/">Camden's Blog</a>
+      <a class="navbar-brand" {% if request.path == '/blog/' %}active{% endif %}" href="{{ request.scheme }}://{{ request.get_host }}/">Blog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,12 +41,12 @@
             <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{{ request.scheme }}://{{ request.get_host }}/contact/">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.path == '/aboutme/' %}active{% endif %}" href="{{ request.scheme }}://{{ request.get_host }}/aboutme/">About Me</a>
+            <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{{ request.scheme }}://{{ request.get_host }}/about/">About</a>
         </ul>
         </li>
 
         </ul>
-        <form class="d-flex" action="/">
+        <form class="d-flex" action="/blog/">
           <input class="form-control mr-0" type="search" value="{{request.GET.q}}" name="q" placeholder="Search" aria-label="Search">
         </form>
       </div>

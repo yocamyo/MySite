@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static '/contact/contact.css' %}">
 
 <h1>Contact Me</h1>
+<br>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <div class="form-actions">
       <button type="submit">Send</button>
     </div>
-</form> 
+</form>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <footer class="text-center">
+      <a href="https://www.linkedin.com/in/naviscam/" target="_blank" rel="noopener noreferrer"><img src="/static/github.svg" alt="Bootstrap" width="50" height="50"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <a href="https://github.com/yocamyo" target="_blank" rel="noopener noreferrer"><img src="/static/linkedin.svg" alt="Bootstrap" width="50" height="50"></a>
+    </footer>
+</div>
 {% endblock content %}

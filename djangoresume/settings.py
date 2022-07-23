@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-o9c39^n9!@0gas0cyehtj#v%8wiuxjti4z=j^5^rqz)9p3_7u4"
-
+SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     "ckeditor_uploader",
     "taggit",
     # local apps
+    "about.apps.AboutConfig",
     "blog.apps.BlogConfig",
     "resume.apps.ResumeConfig",
     "contact.apps.ContactConfig",
@@ -291,6 +295,16 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+CONTACT_EMAIL = "naviscam@gmail.com"
+ADMIN_EMAILS = [
+    "naviscam@gmail.com",
+]
 
-DEFAULT_FROM_EMAIL = "naviscam@gmail.com"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Twilio SendGrid
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST_PASSWORD = os.environ.get("SENDGRID_API_KEY")
