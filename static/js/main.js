@@ -11,3 +11,7 @@ function handleCancel(response_id) {
         reply_form_container.style.display = 'none';
     }
 }
+
+function websiteVisits(response) {
+    document.querySelector("#visits").textContent = response.value;
+}
