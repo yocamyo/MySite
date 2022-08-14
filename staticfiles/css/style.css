@@ -1,0 +1,16 @@
+.container{
+    max-width: 768px;
+    width: 100%;
+}
+
+body {background-color: darkgrey;}
+
+article img{
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: .25rem!important;
+}
+
+.featured-image-list{
+    object-fit: cover;
+}

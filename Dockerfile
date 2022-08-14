@@ -17,5 +17,5 @@ COPY requirements.txt /
 RUN pip install --no-cache-dir -r /requirements.txt
 
 # Moving application files
-WORKDIR /MySite
-COPY . /MySite
+WORKDIR /app
+COPY . /app

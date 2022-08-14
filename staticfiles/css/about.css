@@ -1,0 +1,291 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #fafafa;
+    color: #212529;
+}
+
+a {
+    color: #212529;
+    text-decoration: none;
+}
+
+a.muted {
+    color: #6c757d;
+}
+
+a:hover {
+    color: #ff7e67;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Alegreya', serif;
+    font-weight: 600;
+}
+
+hr {
+    border-color: #eee;
+    border-style: none;
+    border-top-style: dotted;
+    border-width: 8px;
+    width: 15%;
+    margin: 30px auto;
+}
+
+.dark {
+    background-color: #033242;
+    color: #fafafa;
+}
+
+#contact-message {
+    height: 210px;
+}
+
+/* Headings */
+
+.big-heading {
+    font-size: 5rem;
+    line-height: 1.5;
+}
+
+.medium-heading {
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+.small-heading {
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+.subheading {
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+
+.custom {
+    color: #fff;
+    background-color: #ff7e67;
+    border-color: #ff7e67;
+    font-weight: 600;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom:hover, .custom:focus {
+    color: #fff;
+    background-color: #e6654e;
+    border-color: #ff7e67;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom:active {
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline {
+    color: #ff7e67;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ff7e67;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline:hover, .custom-outline:focus {
+    color: #fff;
+    background-color: #e6654e;
+    border-color: #ff7e67;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline:active {
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+/* Navbar */
+
+.brand {
+    font-family: 'Lobster', cursive;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: #ff7e67;
+}
+
+.button {
+    color: #ff7e67;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    color: #ff7e67;
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    height: 400px;
+    position: relative;
+    background: no-repeat center center;
+    background-color: #ccf2f4;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.jumbo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: 0.5;
+}
+
+.jumbo-title {
+    position: relative;
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #fafafa;
+}
+
+.jumbo-subheader {
+    font-size: 1.1rem;
+}
+
+/* Features */
+
+.feature-title {
+    padding: 40px 0;
+}
+
+.feature-box {
+    padding: 3% 5% 5%;
+}
+
+.feature-icon {
+    padding-bottom: 20px;
+    color: #ff7e67;
+}
+
+/* About */
+
+.profile-pic {
+    width: 180px;
+    border-radius: 100%;
+    padding: 20px 0;
+}
+
+.media-about {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.media-img {
+    width: 140px;
+    border-radius: 100%;
+}
+
+.body-right {
+    padding-left: 20px;
+}
+
+.body-left {
+    padding-right: 20px;
+}
+
+/* Blog */
+
+.post-meta {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 10px;
+    color: #6c757d;
+}
+
+.register-link {
+    margin-top: 10px;
+}
+
+.comment {
+    padding-top: 20px;
+}
+
+.media-comment {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.commenter-image {
+    width: 30px;
+    margin-right: 5px;
+    height: 100%;
+    float: left;
+}
+
+.commenter-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.comment-text p {
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.comment-meta {
+    font-size: 11px;
+    color: #868e96;
+    font-style: italic;
+}
+
+/* Projects */
+
+.card-deck {
+    padding-top: 40px;
+}
+
+.status {
+    font-size: 0.9rem;
+}
+
+.btn-proj {
+     margin-right: 5px;
+}
+
+/* CTA */
+
+.cta {
+    padding: 40px 0;
+}
+
+.cta-btn {
+    margin: 10px 15px;
+}
+
+/* Footer */
+
+footer {
+    padding: 40px 0 10px;
+    margin-top: 0;
+}
+
+.footer-icon {
+    padding: 20px 15px;
+}
+
+.footer-icon:hover {
+    color: #ff7e67;
+}
+
+.copyright {
+    font-size: 0.8rem;
+}
